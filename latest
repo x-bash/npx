@@ -5,17 +5,10 @@ ___x_cmd_npx(){
     ___x_cmd___npx_origin "$@"
 }
 
-if command -v npx; then
-
-    ___x_cmd___npx_origin(){
-        command -v npx "$@"
-    }
-
-else
-
+if ! command -v npx; then
     x env try node=latest
-    ___x_cmd___npx_origin(){
-        command -v npx "$@"
-    }
-
 fi
+
+___x_cmd___npx_origin(){
+    command -v npx "$@"
+}
