@@ -2,10 +2,20 @@
 # shellcheck    shell=sh        disable=SC3043,SC2164,SC1091     # xrc
 
 ___x_cmd_npx(){
-    :
-}
-
-___x_cmd___npx_origin(){
-    x pkg install npx && x pkg xbin init ucloud ___x_cmd___npx_origin || return
     ___x_cmd___npx_origin "$@"
 }
+
+if command -v npx; then
+
+    ___x_cmd___npx_origin(){
+        command -v npx "$@"
+    }
+
+else
+
+    x env try node=latest
+    ___x_cmd___npx_origin(){
+        command -v npx "$@"
+    }
+
+fi
