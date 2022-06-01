@@ -18,9 +18,7 @@ ___x_cmd___npx_exec(){
     local name="$1"; shift
     case "$name" in
         -*)     ___x_cmd___npx_origin "$name" "$@" ;;
-        *)
-            # ___x_cmd___npx_origin "$name" "$@" ;;
-            ___x_cmd___npx_exec_2 "$name" "$@"
+        *)      ___x_cmd___npx_exec_2 "$name" "$@"
     esac
 }
 
