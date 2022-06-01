@@ -9,6 +9,12 @@ if ! command -v npx; then
     x env try node=latest
 fi
 
+___x_cmd___npx_origin(){
+    command -v npx "$@"
+}
+
+
+
 ___x_cmd___npx_exec(){
     local name="$1"; shift
     case "$name" in
@@ -17,10 +23,6 @@ ___x_cmd___npx_exec(){
             # ___x_cmd___npx_origin "$name" "$@" ;;
             ___x_cmd___npx_exec_2 "$name" "$@"
     esac
-}
-
-___x_cmd___npx_origin(){
-    command -v npx "$@"
 }
 
 ___x_cmd___npx_exec_2(){
