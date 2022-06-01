@@ -7,7 +7,7 @@ ___x_cmd_npx(){
 }
 
 if ! command -v npx; then
-    x env try node=latest
+    x env try node
 fi
 
 ___x_cmd___npx_origin(){
