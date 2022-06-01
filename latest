@@ -3,6 +3,7 @@
 
 ___x_cmd_npx(){
     ___x_cmd___npx_origin "$@"
+    # ___x_cmd___npx_exec "$@"
 }
 
 if ! command -v npx; then
