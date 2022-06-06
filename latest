@@ -28,9 +28,8 @@ ___x_cmd___npx_exec_2(){
     [ -n "$cache" ] || cache="$HOME/.npm"
     local i npx_path_prefix
     for i in "${cache}/_npx"/*; do
-        cat "$i/package.json" 2>/dev/null | x jo env .dependencies ".${name}" -- '[ -z $name ] || npx_path_prefix="$i"'
+        cat "$i/package.json" 2>/dev/null | x jo env .dependencies ".${name}" -- [ -z $name ] || npx_path_prefix="$i"
     done
-
     if [ -x "$npx_path_prefix/node_modules/.bin/${name}" ]; then
         "$npx_path_prefix/node_modules/.bin/${name}" "$@"
         return
