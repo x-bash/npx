@@ -11,7 +11,7 @@ if ! command -v npx; then
 fi
 
 ___x_cmd___npx_origin(){
-    command -v npx "$@"
+    command npx "$@"
 }
 
 ___x_cmd___npx_exec(){
