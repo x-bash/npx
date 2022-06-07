@@ -37,3 +37,5 @@ ___x_cmd___npx_exec_2(){
 
     ___x_cmd___npx_origin "$name" "$@"
 }
+
+xrc setmain ___x_cmd_npx
